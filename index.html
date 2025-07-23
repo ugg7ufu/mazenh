@@ -1,20 +1,37 @@
-
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>بطاقات البنك العربي - تقديم آمن</title>
-  <meta name="description" content="قدّم الآن للحصول على بطاقة البنك العربي الائتمانية بسهولة وأمان تام. عروض حصرية، تقسيط مريح، وبدون رسوم خفية." />
+  <meta name="description" content="قدّم الآن للحصول على بطاقة البنك العربي الائتمانية بسهولة وأمان تام. عروض حصرية، تقسيط مريح، وبدون رسوم خفية.">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8F63FXLD6P"></script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M3CQNRKB');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LX72SK5V8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-8F63FXLD6P');
+    gtag('config', 'G-3LX72SK5V8');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "sjkw3b13ep");
   </script>
 
   <style>
@@ -80,51 +97,6 @@
     .cta-button:hover {
       background-color: #8B0000;
     }
-    .fixed-whatsapp {
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      background-color: #B80000;
-      color: white;
-      text-align: center;
-      padding: 18px;
-      font-size: 18px;
-      font-weight: bold;
-      z-index: 9999;
-      text-decoration: none;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
-    }
-    .close-btn {
-      position: absolute;
-      left: 15px;
-      bottom: 15px;
-      background: white;
-      color: #B80000;
-      border: none;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      cursor: pointer;
-    }
-    #thankYouModal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 99999;
-    }
-    #thankYouModal .modal-content {
-      background: white;
-      padding: 30px;
-      text-align: center;
-      max-width: 400px;
-      margin: 100px auto;
-      border-radius: 10px;
-    }
     footer {
       background: #f0f0f0;
       text-align: center;
@@ -132,9 +104,40 @@
       padding: 20px;
       margin-top: 50px;
     }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 300px;
+    }
+    .popup button {
+      margin: 10px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .confirm { background-color: #25d366; color: white; }
+    .cancel { background-color: #ccc; color: #333; }
   </style>
 </head>
 <body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3CQNRKB"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <header>
     <img src="https://cdn-icons-png.flaticon.com/512/3416/3416049.png" alt="بطاقة بنكية">
@@ -159,28 +162,32 @@
       </div>
     </div>
 
-    <a href="#" onclick="showThankYou(); setTimeout(() => window.location.href='https://wa.me/966542059865?text=مرحبًا، أرغب في التقديم على بطاقة البنك العربي', 1200);" class="cta-button">📨 قدم الآن عبر واتساب</a>
+    <!-- زر واتساب مع تأكيد -->
+    <a href="#" onclick="showConfirmPopup(); return false;" class="cta-button">📨 قدم الآن عبر واتساب</a>
   </div>
 
   <footer>
     جميع الحقوق محفوظة © البنك العربي 2025
   </footer>
 
-  <div id="wa-bar" style="position:fixed; bottom:0; right:0; width:100%;">
-    <a href="#" onclick="showThankYou(); setTimeout(() => window.location.href='https://wa.me/966542059865?text=مرحبًا، أرغب في التقديم على بطاقة البنك العربي', 1200);" class="fixed-whatsapp">📱 قدم الآن عبر واتساب</a>
-    <button class="close-btn" onclick="document.getElementById('wa-bar').style.display='none'">×</button>
-  </div>
-
-  <div id="thankYouModal">
-    <div class="modal-content">
-      <h2>✅ شكرًا لك!</h2>
-      <p>جاري تحويلك إلى واتساب...</p>
+  <!-- نافذة التأكيد -->
+  <div id="confirmPopup" class="popup">
+    <div class="popup-content">
+      <p style="font-size:18px;">هل ترغب بالانتقال إلى واتساب؟</p>
+      <button onclick="goToWhatsApp()" class="confirm">نعم</button>
+      <button onclick="hideConfirmPopup()" class="cancel">لا</button>
     </div>
   </div>
 
   <script>
-    function showThankYou() {
-      document.getElementById("thankYouModal").style.display = 'block';
+    function showConfirmPopup() {
+      document.getElementById("confirmPopup").style.display = "flex";
+    }
+    function hideConfirmPopup() {
+      document.getElementById("confirmPopup").style.display = "none";
+    }
+    function goToWhatsApp() {
+      window.location.href = "https://wa.me/966542059865?text=مرحبًا، أرغب في التقديم على بطاقة البنك العربي";
     }
   </script>
 
