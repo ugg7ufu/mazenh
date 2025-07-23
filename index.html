@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -7,32 +8,26 @@
   <title>بطاقات البنك العربي - تقديم آمن</title>
   <meta name="description" content="قدّم الآن للحصول على بطاقة البنك العربي الائتمانية بسهولة وأمان تام. عروض حصرية، تقسيط مريح، وبدون رسوم خفية.">
 
-  <!-- Google Tag Manager -->
+  <!-- Meta Pixel -->
   <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M3CQNRKB');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3625144900950847');
+    fbq('track', 'PageView');
   </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=3625144900950847&ev=PageView&noscript=1"/>
+  </noscript>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LX72SK5V8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3LX72SK5V8');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "sjkw3b13ep");
-  </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -134,9 +129,6 @@
 </head>
 <body>
 
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3CQNRKB"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
   <header>
     <img src="https://cdn-icons-png.flaticon.com/512/3416/3416049.png" alt="بطاقة بنكية">
     <h1>💳 بطاقات البنك العربي</h1>
@@ -160,7 +152,7 @@
       </div>
     </div>
 
-    <a href="#" onclick="showConfirmPopup(); return false;" class="cta-button">📨 قدم الآن عبر واتساب</a>
+    <a href="#" onclick="trackLead(); return false;" class="cta-button">📨 قدم الآن عبر واتساب</a>
   </div>
 
   <footer>
@@ -184,6 +176,11 @@
     }
     function goToWhatsApp() {
       window.location.href = "https://wa.me/966542059865?text=مرحبًا، أرغب في التقديم على بطاقة البنك العربي";
+    }
+
+    function trackLead() {
+      fbq('track', 'Lead');
+      showConfirmPopup();
     }
   </script>
 
